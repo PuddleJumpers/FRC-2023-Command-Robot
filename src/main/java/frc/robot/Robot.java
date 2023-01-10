@@ -95,8 +95,12 @@ public class Robot extends TimedRobot {
   public void teleopPeriodic() {
 
     double y_axis_position = controller.getRawAxis(1);
+    double x_axis_position = controller.getRawAxis(2);
     
     motor0.set(ControlMode.PercentOutput, y_axis_position);
+    motor1.set(ControlMode.PercentOutput, y_axis_position);
+    motor2.set(ControlMode.PercentOutput, x_axis_position);
+    motor3.set(ControlMode.PercentOutput, x_axis_position);
   }
 
   @Override
