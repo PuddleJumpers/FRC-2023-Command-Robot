@@ -3,11 +3,7 @@
 // the WPILib BSD license file in the root directory of this project.
 
 package frc.robot;
-import com.ctre.phoenix.motorcontrol.ControlMode;
-import com.ctre.phoenix.motorcontrol.can.VictorSPX;
-
 import edu.wpi.first.wpilibj.TimedRobot;
-import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
 
@@ -22,12 +18,7 @@ public class Robot extends TimedRobot {
 
   private RobotContainer m_robotContainer;
 
-  private XboxController controller = new XboxController(0);
-
-  private VictorSPX motor0 = new VictorSPX(0);
-  private VictorSPX motor1 = new VictorSPX(1);
-  private VictorSPX motor2 = new VictorSPX(2);
-  private VictorSPX motor3 = new VictorSPX(3);
+  
 
 
   /**
@@ -93,14 +84,6 @@ public class Robot extends TimedRobot {
   /** This function is called periodically during operator control. */
   @Override
   public void teleopPeriodic() {
-
-    double y_axis_position = controller.getRawAxis(1);
-    double x_axis_position = controller.getRawAxis(2);
-    
-    motor0.set(ControlMode.PercentOutput, y_axis_position);
-    motor1.set(ControlMode.PercentOutput, y_axis_position);
-    motor2.set(ControlMode.PercentOutput, x_axis_position);
-    motor3.set(ControlMode.PercentOutput, x_axis_position);
   }
 
   @Override
